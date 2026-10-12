@@ -1,110 +1,110 @@
 # FIREMAX — Deccum / Savings Map
 
-面向提前退休人群的**退休提款规划工具**原型。把散落在 401(k)、Roth、券商、养老金里的资产连起来，按年份规划该从哪个账户取钱，并追踪影响计划的新政策变化。
+A prototype **retirement withdrawal planner** for people pursuing early retirement. It connects assets scattered across 401(k), Roth, brokerage, and pension accounts, plans which account to draw from each year, and tracks new policy changes that affect the plan.
 
-> Cursor Hackathon Toronto 项目
+> Cursor Hackathon Toronto project
 
 ---
 
-## 快速开始
+## Quick Start
 
-### 环境要求
+### Requirements
 
-- [Node.js](https://nodejs.org/) **18+**（推荐 20+）
-- npm（随 Node.js 一起安装）
+- [Node.js](https://nodejs.org/) **18+** (20+ recommended)
+- npm (bundled with Node.js)
 
-### 本地运行
+### Run Locally
 
 ```bash
-# 1. 克隆仓库
+# 1. Clone the repository
 git clone https://github.com/xiangxinyue/FIREMAX.git
 cd FIREMAX
 
-# 2. 进入前端项目目录
+# 2. Enter the frontend project directory
 cd deccum
 
-# 3. 安装依赖
+# 3. Install dependencies
 npm install
 
-# 4. 启动开发服务器
+# 4. Start the dev server
 npm run dev
 ```
 
-启动后在浏览器打开：**http://localhost:5173**
+Then open **http://localhost:5173** in your browser.
 
-### 生产构建（可选）
+### Production Build (optional)
 
 ```bash
 cd deccum
-npm run build    # 构建静态文件到 dist/
-npm run preview  # 本地预览构建结果
+npm run build    # Build static files into dist/
+npm run preview  # Preview the build locally
 ```
 
 ---
 
-## 使用流程
+## How to Use
 
-1. **Setup** — 填写年龄、离职年龄、年支出，以及各账户余额
-2. **Generate Savings Map** — 生成按年份规划的提款时间线
-3. **Savings Map** — 查看彩色时间线、每年提款来源、ACA / 罚金等预警
-4. **Policy Tracker** — 浏览 SECURE 2.0、ACA 补贴、RMD 等政策变化对你的影响
-
----
-
-## 功能概览
-
-| 模块 | 说明 |
-|------|------|
-| 账户设置 | 401(k)、Roth IRA、券商、养老金、HSA |
-| 提款引擎 | Rule of 55、Roth 转换、ACA 门槛、社保时机 |
-| 彩色时间线 | 每年按账户类型堆叠，点击看详情 |
-| 预警系统 | 提前取款罚金、ACA 悬崖、RMD、IRMAA |
-| 政策追踪 | 10+ 条政策模拟数据，个性化影响评估 |
+1. **Setup** — Enter your age, target retirement age, annual spending, and account balances
+2. **Generate Savings Map** — Build a year-by-year withdrawal timeline
+3. **Savings Map** — View the color-coded timeline, each year's withdrawal sources, and warnings such as ACA / penalties
+4. **Policy Tracker** — Browse how policy changes like SECURE 2.0, ACA subsidies, and RMDs affect you
 
 ---
 
-## 项目结构
+## Features
+
+| Module | Description |
+|--------|-------------|
+| Account Setup | 401(k), Roth IRA, brokerage, pension, HSA |
+| Withdrawal Engine | Rule of 55, Roth conversions, ACA thresholds, Social Security timing |
+| Color Timeline | Stacked by account type per year, click for details |
+| Warning System | Early withdrawal penalties, ACA cliff, RMD, IRMAA |
+| Policy Tracker | 10+ mock policy entries with personalized impact assessment |
+
+---
+
+## Project Structure
 
 ```
 FIREMAX/
-└── deccum/                  # 前端原型（React + Vite + Tailwind）
+└── deccum/                  # Frontend prototype (React + Vite + Tailwind)
     ├── src/
-    │   ├── App.tsx          # 主应用
-    │   ├── components/      # UI 组件
-    │   ├── data/policies.ts # 政策数据库
-    │   └── engine/          # 提款策略引擎
+    │   ├── App.tsx          # Main app
+    │   ├── components/      # UI components
+    │   ├── data/policies.ts # Policy database
+    │   └── engine/          # Withdrawal strategy engine
     ├── package.json
     └── vite.config.ts
 ```
 
 ---
 
-## 技术栈
+## Tech Stack
 
 - **React 19** + **TypeScript**
-- **Vite 6** — 开发服务器与构建
-- **Tailwind CSS 4** — 样式
+- **Vite 6** — dev server and build
+- **Tailwind CSS 4** — styling
 
 ---
 
-## 常见问题
+## FAQ
 
-**Q: 端口 5173 被占用怎么办？**
+**Q: Port 5173 is already in use?**
 
-Vite 会自动尝试下一个可用端口，注意终端输出的实际地址。
+Vite automatically tries the next available port. Check the terminal output for the actual address.
 
-**Q: `npm install` 报错？**
+**Q: `npm install` fails?**
 
-确认 Node.js 版本 ≥ 18，然后删除 `node_modules` 和 `package-lock.json` 后重新安装：
+Make sure your Node.js version is ≥ 18, then delete `node_modules` and `package-lock.json` and reinstall:
 
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
-**Q: 这是真实的财务建议吗？**
+**Q: Is this real financial advice?**
 
-不是。这是产品原型，税务规则已简化，仅供演示，不构成投资或税务建议。
+No. This is a product prototype. Tax rules are simplified and for demonstration only. It is not investment or tax advice.
 
 ---
 
